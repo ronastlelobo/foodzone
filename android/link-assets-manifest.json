@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Sk-Modernist-Bold.ttf",
+      "sha1": "575afb9770ef112f074ec21d7cba6f1944529564"
+    },
+    {
+      "path": "assets/fonts/Sk-Modernist-Regular.ttf",
+      "sha1": "cfb5e79fa93b841816edcd533b3a4995c0627db4"
+    }
+  ]
+}
