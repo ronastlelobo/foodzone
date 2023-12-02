@@ -9,7 +9,7 @@ interface Button {
 const Button = ({onPress, label = ''}: Button) => {
   return (
     <Pressable onPress={onPress} style={styles.doneBtn}>
-      <Text>{label}</Text>
+      <Text style={styles.buttonText}>{label}</Text>
     </Pressable>
   );
 };
