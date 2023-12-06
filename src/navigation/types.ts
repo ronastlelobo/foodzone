@@ -1,4 +1,4 @@
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {NavigatorScreenParams} from '@react-navigation/native';
 
 export type MainStackNavigatorParamList = {
@@ -9,32 +9,32 @@ export type MainStackNavigatorParamList = {
 };
 
 export type MainStackNavigationProp =
-  NativeStackScreenProps<MainStackNavigatorParamList>;
+  NativeStackNavigationProp<MainStackNavigatorParamList>;
 
 export type LoginStackNavigatorParamList = {
   Login: undefined;
 };
 
 export type LoginStackNavigationProp =
-  NativeStackScreenProps<LoginStackNavigatorParamList>;
+  NativeStackNavigationProp<LoginStackNavigatorParamList>;
 
 export type HomeStackNavigatorParamList = {
   Home: undefined;
 };
 
 export type HomeStackNavigationProp =
-  NativeStackScreenProps<LoginStackNavigatorParamList>;
+  NativeStackNavigationProp<LoginStackNavigatorParamList>;
 
 export type MenuStackNavigatorParamList = {
   Menu: undefined;
 };
 
 export type MenuStackNavigationProp =
-  NativeStackScreenProps<LoginStackNavigatorParamList>;
+  NativeStackNavigationProp<LoginStackNavigatorParamList>;
 
 export type CheckoutStackNavigatorParamList = {
   Checkout: undefined;
 };
 
 export type CheckoutStackNavigationProp =
-  NativeStackScreenProps<LoginStackNavigatorParamList>;
+  NativeStackNavigationProp<LoginStackNavigatorParamList>;

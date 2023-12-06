@@ -7,7 +7,9 @@
 
 import React from 'react';
 import {SafeAreaView, StyleSheet, useColorScheme, View} from 'react-native';
+import {Provider} from 'react-redux';
 
+import {store} from './src/redux/store';
 import RootNavigator from './src/navigation/router';
 
 function App(): JSX.Element {
@@ -19,9 +21,11 @@ function App(): JSX.Element {
   };
 
   return (
-    <View style={backgroundStyle}>
-      <RootNavigator />
-    </View>
+    <Provider store={store}>
+      <View style={backgroundStyle}>
+        <RootNavigator />
+      </View>
+    </Provider>
   );
 }
 
