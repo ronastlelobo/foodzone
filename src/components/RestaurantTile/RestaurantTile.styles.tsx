@@ -36,4 +36,20 @@ export const styles = StyleSheet.create({
     fontSize: hp(1.6),
     fontFamily: Theme.fonts.regular,
   },
+  locationContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  distText: {
+    fontFamily: Theme.fonts.regular,
+    color: Theme.colors.grey,
+  },
+  locationImg: {
+    maxHeight: hp(2),
+    transform: [{rotate: '45deg'}],
+    tintColor: Theme.colors.grey,
+    marginBottom: 4,
+  },
 });

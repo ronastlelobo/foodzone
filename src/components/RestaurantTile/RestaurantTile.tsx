@@ -7,6 +7,8 @@ import {useAppDispatch} from '../../redux/hooks';
 import {addRestarauntItem} from '../../redux/slice/checkout';
 import {MainStackNavigatorParamList} from '../../navigation/types';
 import {useMemo} from 'react';
+import ImageLib from '../../utils/ImageLib';
+import {haversineDistanceBetweenPoints} from '../../utils/CommonFunctions';
 
 export const RestaurantTile: ListRenderItem<Restaurant> = ({item}) => {
   const navigation = useNavigation<MainStackNavigatorParamList>();
@@ -35,6 +37,22 @@ export const RestaurantTile: ListRenderItem<Restaurant> = ({item}) => {
         <Text style={styles.neighbourhoodText}>{item.neighborhood}</Text>
         <Text style={styles.neighbourhoodText}>{item.address}</Text>
         <Text style={styles.cuisineText}>{item.cuisine_type}</Text>
+        <View style={styles.locationContainer}>
+          <Text style={styles.distText}>
+            {haversineDistanceBetweenPoints(
+              item.latlng.lat,
+              item.latlng.lng,
+              AppConstants.MY_LOCATION.LAT,
+              AppConstants.MY_LOCATION.LON,
+            )}{' '}
+            KM
+          </Text>
+          <Image
+            source={ImageLib.navigationIcon}
+            style={styles.locationImg}
+            resizeMode="contain"
+          />
+        </View>
       </View>
     </Pressable>
   );

@@ -13,4 +13,8 @@ export default {
   RANDOM_IMG: `https://source.unsplash.com/collection/622228?sig=${Math.floor(
     Math.random() * 100,
   )}`,
+  MY_LOCATION: {
+    LAT: 40.7831,
+    LON: 73.9712,
+  },
 };
