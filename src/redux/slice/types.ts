@@ -10,6 +10,7 @@ export interface Restaurant {
   name: string;
   neighborhood: string;
   photograph: string;
+  avg_rating: number;
   address: string;
   latlng: Latlng;
   cuisine_type: string;

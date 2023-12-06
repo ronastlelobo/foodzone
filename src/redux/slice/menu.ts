@@ -2,10 +2,12 @@ import {
   createSlice,
   createAsyncThunk,
   createEntityAdapter,
+  createSelector,
 } from '@reduxjs/toolkit';
 import {LoadingState} from '../types';
 import {Menu, MenuItem} from './types';
 import {getAllMenu} from '../../api/checkout';
+import _ from 'lodash';
 
 const initialState: Menu = {
   data: [],
@@ -52,5 +54,15 @@ export const selectAllMenu = menuSelectors.selectAll as (
 ) => MenuItem[];
 
 export const selectMenuItemById = menuSelectors.selectById;
+
+export const menuByCategoryName = createSelector(
+  menuSelectors.selectAll,
+  allMenu => {
+    return _.chain(allMenu)
+      .groupBy('category_name')
+      .map((value, key) => ({title: key, data: value}))
+      .value();
+  },
+);
 
 export const menuReducer = menuSlice.reducer;

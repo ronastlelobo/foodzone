@@ -4,6 +4,7 @@ const CartIcon = require('../../assets/images/cart.png');
 const AddIcon = require('../../assets/images/add.png');
 const RemoveIcon = require('../../assets/images/remove.png');
 const NavigationIcon = require('../../assets/images/navigation.png');
+const StarIcon = require('../../assets/images/star.png');
 
 export default {
   loginBg: LoginBG,
@@ -12,4 +13,5 @@ export default {
   addIcon: AddIcon,
   removeIcon: RemoveIcon,
   navigationIcon: NavigationIcon,
+  starIcon: StarIcon,
 };

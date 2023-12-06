@@ -38,7 +38,6 @@ const useAuth = () => {
 
   function onAuthStateChanged(user: User) {
     setUser(user);
-    console.log('user', user);
     if (user) {
       setLoading(LoadingState.loaded);
       navigation.navigate('HomeStackNavigator');

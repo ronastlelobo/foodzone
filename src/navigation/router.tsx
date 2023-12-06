@@ -41,7 +41,7 @@ export default function RootNavigator() {
           headerShown: false,
           headerTransparent: true,
         }}>
-        <HomeStack.Screen name="Home" component={Home} />
+        <HomeStack.Screen name="Restaurants" component={Home} />
       </HomeStack.Navigator>
     );
   };

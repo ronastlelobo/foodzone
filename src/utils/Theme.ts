@@ -8,6 +8,7 @@ export const Theme = {
     grey: '#848484',
     green100: '#C8FFC7',
     green900: '#04D100',
+    gold: '#FFD700',
   },
   fonts: AppConstants.IS_IOS
     ? {

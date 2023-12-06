@@ -9,6 +9,7 @@ import {MainStackNavigatorParamList} from '../../navigation/types';
 import {useMemo} from 'react';
 import ImageLib from '../../utils/ImageLib';
 import {haversineDistanceBetweenPoints} from '../../utils/CommonFunctions';
+import {Theme} from '../../utils/Theme';
 
 export const RestaurantTile: ListRenderItem<Restaurant> = ({item}) => {
   const navigation = useNavigation<MainStackNavigatorParamList>();
@@ -38,20 +39,31 @@ export const RestaurantTile: ListRenderItem<Restaurant> = ({item}) => {
         <Text style={styles.neighbourhoodText}>{item.address}</Text>
         <Text style={styles.cuisineText}>{item.cuisine_type}</Text>
         <View style={styles.locationContainer}>
-          <Text style={styles.distText}>
-            {haversineDistanceBetweenPoints(
-              item.latlng.lat,
-              item.latlng.lng,
-              AppConstants.MY_LOCATION.LAT,
-              AppConstants.MY_LOCATION.LON,
-            )}{' '}
-            KM
-          </Text>
-          <Image
-            source={ImageLib.navigationIcon}
-            style={styles.locationImg}
-            resizeMode="contain"
-          />
+          <View style={styles.paramContainer}>
+            <Image
+              source={ImageLib.starIcon}
+              style={styles.starImg}
+              tintColor={Theme.colors.gold}
+              resizeMode="contain"
+            />
+            <Text style={styles.paramText}>{item.avg_rating}</Text>
+          </View>
+          <View style={styles.paramContainer}>
+            <Text style={styles.paramText}>
+              {haversineDistanceBetweenPoints(
+                item.latlng.lat,
+                item.latlng.lng,
+                AppConstants.MY_LOCATION.LAT,
+                AppConstants.MY_LOCATION.LON,
+              )}{' '}
+              KM
+            </Text>
+            <Image
+              source={ImageLib.navigationIcon}
+              style={styles.locationImg}
+              resizeMode="contain"
+            />
+          </View>
         </View>
       </View>
     </Pressable>

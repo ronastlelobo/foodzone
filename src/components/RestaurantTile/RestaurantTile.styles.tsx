@@ -40,11 +40,21 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  paramContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'flex-end',
   },
-  distText: {
+  paramText: {
     fontFamily: Theme.fonts.regular,
     color: Theme.colors.grey,
+  },
+  starImg: {
+    maxHeight: hp(2),
+    tintColor: Theme.colors.grey,
+    marginBottom: 4,
   },
   locationImg: {
     maxHeight: hp(2),

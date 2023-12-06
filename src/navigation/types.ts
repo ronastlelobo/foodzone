@@ -21,7 +21,7 @@ export type LoginStackNavigationProp =
   NativeStackNavigationProp<LoginStackNavigatorParamList>;
 
 export type HomeStackNavigatorParamList = {
-  Home: undefined;
+  Restaurants: undefined;
 };
 
 export type HomeStackNavigationProp =
