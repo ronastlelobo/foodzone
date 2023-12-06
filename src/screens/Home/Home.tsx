@@ -1,18 +1,11 @@
-import React, {useMemo, useEffect} from 'react';
-import {
-  View,
-  StatusBar,
-  FlatList,
-  SafeAreaView,
-  Text,
-  ListRenderItemInfo,
-} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, StatusBar, FlatList} from 'react-native';
 import Header from '../../components/Header/Header';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {getRestaurantsAction} from '../../redux/slice/home';
 import {styles} from './Home.styles';
 import {Restaurant} from '../../redux/slice/types';
-import {RestaurantTile} from './Restaurant/RestaurantTile';
+import {RestaurantTile} from '../../components/RestaurantTile/RestaurantTile';
 
 const Home = () => {
   const dispatch = useAppDispatch();

@@ -11,6 +11,6 @@ export default {
   },
   SCREEN_DISABLE_BACK_BUTTTON: ['Home', 'Login'],
   RANDOM_IMG: `https://source.unsplash.com/collection/622228?sig=${Math.floor(
-    Math.random() * 50,
+    Math.random() * 100,
   )}`,
 };

@@ -5,10 +5,11 @@ import {useRoute, useNavigation} from '@react-navigation/native';
 import {styles} from './Header.styles';
 import ImageLib from '../../utils/ImageLib';
 import AppConstants from '../../utils/AppConstants';
+import {MainStackNavigatorParamList} from '../../navigation/types';
 
 const Header = () => {
   const route = useRoute();
-  const navigation = useNavigation();
+  const navigation = useNavigation<MainStackNavigatorParamList>();
 
   const HeaderUI = () => {
     const title = route.name;

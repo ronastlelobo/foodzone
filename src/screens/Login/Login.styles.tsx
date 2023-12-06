@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   buttonContainer: {
-    flex: 0.3,
+    flex: 0.25,
     justifyContent: 'center',
   },
 });

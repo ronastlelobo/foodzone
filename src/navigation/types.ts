@@ -2,6 +2,8 @@ import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {NavigatorScreenParams} from '@react-navigation/native';
 
 export type MainStackNavigatorParamList = {
+  goBack(): unknown;
+  navigate(arg0: string): unknown;
   LoginStackNavigator: NavigatorScreenParams<LoginStackNavigatorParamList>;
   HomeStackNavigator: NavigatorScreenParams<HomeStackNavigatorParamList>;
   MenuStackNavigator: NavigatorScreenParams<MenuStackNavigatorParamList>;

@@ -6,6 +6,8 @@ export const Theme = {
     primary: '#000000',
     black: '#000000',
     grey: '#848484',
+    green100: '#C8FFC7',
+    green900: '#04D100',
   },
   fonts: AppConstants.IS_IOS
     ? {

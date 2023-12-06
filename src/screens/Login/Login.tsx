@@ -1,4 +1,4 @@
-import React, {useMemo, useEffect} from 'react';
+import React from 'react';
 import {View, ImageBackground, StatusBar, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useNavigation} from '@react-navigation/native';
@@ -7,12 +7,11 @@ import {hp} from '../../utils/PixelRatio';
 import {styles} from './Login.styles';
 import Button from '../../components/Button/Button';
 import useAuth from '../../hooks/useAuth';
-import {MainStackNavigationProp} from '../../navigation/types';
+import Loader from '../../components/Loader/Loader';
 
 const Login = (): JSX.Element => {
-  const navigation = useNavigation<MainStackNavigationProp>();
   const insets = useSafeAreaInsets();
-  const {autoSignIn, onGoogleButtonPress} = useAuth();
+  const {autoSignIn, onGoogleButtonPress, loading} = useAuth();
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} backgroundColor={'#000'} />
@@ -26,13 +25,11 @@ const Login = (): JSX.Element => {
           </View>
           <View style={styles.buttonContainer}>
             <Button onPress={autoSignIn} label="Auto Login" />
-            <Button
-              onPress={onGoogleButtonPress}
-              label="Login with Mobile Number"
-            />
+            <Button onPress={onGoogleButtonPress} label="Login with Google" />
           </View>
         </View>
       </ImageBackground>
+      <Loader loading={loading} />
     </View>
   );
 };

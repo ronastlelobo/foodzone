@@ -1,18 +1,21 @@
 import {Image, ListRenderItem, Text, View, Pressable} from 'react-native';
-import {Restaurant} from '../../../redux/slice/types';
+import {Restaurant} from '../../redux/slice/types';
 import {styles} from './RestaurantTile.styles';
-import AppConstants from '../../../utils/AppConstants';
+import AppConstants from '../../utils/AppConstants';
 import {useNavigation} from '@react-navigation/native';
-import {useEffect} from 'react';
-import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
-import {
-  addRestarauntItem,
-  removeAllMenuItem,
-} from '../../../redux/slice/checkout';
+import {useAppDispatch} from '../../redux/hooks';
+import {addRestarauntItem} from '../../redux/slice/checkout';
+import {MainStackNavigatorParamList} from '../../navigation/types';
+import {useMemo} from 'react';
 
 export const RestaurantTile: ListRenderItem<Restaurant> = ({item}) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<MainStackNavigatorParamList>();
   const dispatch = useAppDispatch();
+  const img = useMemo(() => {
+    return `https://source.unsplash.com/collection/622228?sig=${Math.floor(
+      Math.random() * 100,
+    )}`;
+  }, []);
 
   const onSelect = () => {
     dispatch(addRestarauntItem(item));
@@ -25,11 +28,7 @@ export const RestaurantTile: ListRenderItem<Restaurant> = ({item}) => {
       key={item.id.toString()}
       style={styles.container}>
       <View style={styles.imgContainer}>
-        <Image
-          source={{uri: AppConstants.RANDOM_IMG}}
-          style={styles.img}
-          resizeMode="cover"
-        />
+        <Image source={{uri: img}} style={styles.img} resizeMode="cover" />
       </View>
       <View style={styles.restaurantDetailsContainer}>
         <Text style={styles.restaurantName}>{item.name}</Text>
