@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "473774399062-s6sp0dq34hsvd99usn32aq4fgtcpnlcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.foodzone",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "473774399062-ljd3jau0n66e4v37au9navq53u9quqi0.apps.googleusercontent.com",
           "client_type": 3
         }

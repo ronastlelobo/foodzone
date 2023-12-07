@@ -48,7 +48,7 @@ const useAuth = () => {
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
-        '473774399062-ohvoofn34du4i4una6im1djheelic34n.apps.googleusercontent.com',
+        '473774399062-ljd3jau0n66e4v37au9navq53u9quqi0.apps.googleusercontent.com',
     });
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
