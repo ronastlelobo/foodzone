@@ -34,55 +34,59 @@ const Checkout = () => {
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'#000'} />
       <Header />
-      <FlatList
-        data={selectedCheckout}
-        ListHeaderComponent={
-          <>
-            <RestaurantTile
-              item={checkout.restaurant!}
-              index={0}
-              separators={{
-                highlight: function (): void {
-                  throw new Error('Function not implemented.');
-                },
-                unhighlight: function (): void {
-                  throw new Error('Function not implemented.');
-                },
-                updateProps: function (
-                  select: 'leading' | 'trailing',
-                  newProps: any,
-                ): void {
-                  throw new Error('Function not implemented.');
-                },
-              }}
-            />
-            <Bill total={total} />
-          </>
-        }
-        renderItem={({item}) => (
-          <MenuTile
-            item={item}
-            index={0}
-            separators={{
-              highlight: function (): void {
-                throw new Error('Function not implemented.');
-              },
-              unhighlight: function (): void {
-                throw new Error('Function not implemented.');
-              },
-              updateProps: function (
-                select: 'leading' | 'trailing',
-                newProps: any,
-              ): void {
-                throw new Error('Function not implemented.');
-              },
-            }}
+      {!!selectedCheckout.length && (
+        <>
+          <FlatList
+            data={selectedCheckout}
+            ListHeaderComponent={
+              <>
+                <RestaurantTile
+                  item={checkout.restaurant!}
+                  index={0}
+                  separators={{
+                    highlight: function (): void {
+                      throw new Error('Function not implemented.');
+                    },
+                    unhighlight: function (): void {
+                      throw new Error('Function not implemented.');
+                    },
+                    updateProps: function (
+                      select: 'leading' | 'trailing',
+                      newProps: any,
+                    ): void {
+                      throw new Error('Function not implemented.');
+                    },
+                  }}
+                />
+                <Bill total={total} />
+              </>
+            }
+            renderItem={({item}) => (
+              <MenuTile
+                item={item}
+                index={0}
+                separators={{
+                  highlight: function (): void {
+                    throw new Error('Function not implemented.');
+                  },
+                  unhighlight: function (): void {
+                    throw new Error('Function not implemented.');
+                  },
+                  updateProps: function (
+                    select: 'leading' | 'trailing',
+                    newProps: any,
+                  ): void {
+                    throw new Error('Function not implemented.');
+                  },
+                }}
+              />
+            )}
+            keyExtractor={item => item.id.toString()}
+            contentContainerStyle={styles.containerContent}
           />
-        )}
-        keyExtractor={item => item.id.toString()}
-        contentContainerStyle={styles.containerContent}
-      />
-      <CheckoutFooter />
+          <CheckoutFooter />
+        </>
+      )}
     </View>
   );
 };
