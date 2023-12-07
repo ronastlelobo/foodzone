@@ -6,9 +6,13 @@ import {styles} from './Header.styles';
 import ImageLib from '../../utils/ImageLib';
 import AppConstants from '../../utils/AppConstants';
 import {MainStackNavigatorParamList} from '../../navigation/types';
+import {useAppSelector} from '../../redux/hooks';
+import {selectAllCheckout} from '../../redux/slice/checkout';
 
 const Header = () => {
   const route = useRoute();
+  const selectedCheckout = useAppSelector(selectAllCheckout);
+  const IS_CART_ITEMS = !!selectedCheckout.length;
   const navigation = useNavigation<MainStackNavigatorParamList>();
 
   const HeaderUI = () => {
@@ -37,7 +41,12 @@ const Header = () => {
                 }}
                 style={[styles.backImgStyle, {alignItems: 'center'}]}>
                 {!AppConstants.SCREENS.CHECKOUT.includes(title) && (
-                  <Image source={ImageLib.cartIcon} resizeMode="contain" />
+                  <>
+                    <Image source={ImageLib.cartIcon} resizeMode="contain" />
+                    {IS_CART_ITEMS && (
+                      <View style={styles.cartItemsIndicator} />
+                    )}
+                  </>
                 )}
               </Pressable>
             </View>

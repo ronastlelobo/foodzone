@@ -47,4 +47,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '60%',
   },
+  cartItemsIndicator: {
+    position: 'absolute',
+    top: 0,
+    right: 10,
+    height: hp(1),
+    width: hp(1),
+    borderRadius: hp(1) / 2,
+    backgroundColor: Theme.colors.green900,
+  },
 });

@@ -36,7 +36,7 @@ export const MenuTile: ListRenderItem<MenuItem> = ({item}) => {
 
   const removeItem = () => {
     if (checkout?.id) {
-      if (checkout.quantity > 0) {
+      if (checkout.quantity - 1 > 0) {
         dispatch(
           updateMenuItem({
             id: item.id,
